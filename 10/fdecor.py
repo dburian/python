@@ -3,11 +3,7 @@
     Function decorators
 """
 
-import functools
-
-
 def ignore_errors(function):
-    @functools.wraps(function)
     def inner_(*args, **kwargs):
         try:
             return function(*args, **kwargs)
@@ -25,7 +21,6 @@ print(div(5, 0))
 
 def ignore_errors_ext(value):
     def ignore_errors(function):
-        @functools.wraps(function)
         def inner_(*args, **kwargs):
             try:
                 return function(*args, **kwargs)
