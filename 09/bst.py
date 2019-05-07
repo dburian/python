@@ -153,7 +153,7 @@ def test():
     print(tree)
 
 if __name__ == '__main__':
-    if len(argv) < 1:
+    if len(argv) < 2:
         test()
     else:
         with open(argv[1]) as _in:
