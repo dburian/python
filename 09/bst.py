@@ -91,13 +91,13 @@ class BST:
 
     def to_string(self, spaces): 
         return f'--- Value: {self.value}\n' + \
-               spaces * ' ' + f' |-{None if self.left is None else self.left.to_string(spaces+3)}\n' + \
-               spaces * ' ' + f' |-{None if self.right is None else self.right.to_string(spaces+3)}'
+               spaces * ' ' + f' |-{"" if self.right is None else self.right.to_string(spaces+3)}\n' + \
+               spaces * ' ' + f' |-{"" if self.left is None else self.left.to_string(spaces+3)}'
 
     def __str__(self):
         return f'--- Value: {self.value}\n' + \
-               f' |-{None if self.left is None else self.left.to_string(3)}\n' + \
-               f' |-{None if self.right is None else self.right.to_string(3)} \n'
+               f' |-{"" if self.right is None else self.right.to_string(3)}\n' + \
+               f' |-{"" if self.left is None else self.left.to_string(3)} \n'
 
     def __iter__(self):
         return BST.Iterator(self)
